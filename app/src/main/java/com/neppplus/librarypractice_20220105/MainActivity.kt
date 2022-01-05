@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 //            (안드로이드) 전화 앱 화면으로 이동
 
 //            코드 구조가 틀린 건 아닌데, 앱이 죽는 상황 (ACTION_CALL)
+
+//            CALL (바로 전화연결)에 대한 권한 획득 후에 전화 연결 진행해야한다
             val myUri = Uri.parse("tel:010-1111-1111")
             val myIntent = Intent(Intent.ACTION_CALL, myUri)
             startActivity(myIntent)
