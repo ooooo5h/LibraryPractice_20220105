@@ -11,6 +11,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnCall.setOnClickListener {
+
+//            010-1111-1111 에 전화 연결하기
+
+
+        }
+
+
         imgProfilePhoto.setOnClickListener {
 
 //            사진을 누르면, 큰 화면으로 진입(Intent -> 추가 액티비티 필요)
