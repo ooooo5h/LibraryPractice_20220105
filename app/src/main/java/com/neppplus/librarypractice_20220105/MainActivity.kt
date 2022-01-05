@@ -4,7 +4,9 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.gun0912.tedpermission.PermissionListener
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,9 +22,28 @@ class MainActivity : AppCompatActivity() {
 //            코드 구조가 틀린 건 아닌데, 앱이 죽는 상황 (ACTION_CALL)
 
 //            CALL (바로 전화연결)에 대한 권한 획득 후에 전화 연결 진행해야한다
-            val myUri = Uri.parse("tel:010-1111-1111")
-            val myIntent = Intent(Intent.ACTION_CALL, myUri)
-            startActivity(myIntent)
+
+//            pl변수에 권한이 OK / 거부일 때 어떤 행동을 할 지 방침만 저장해뒀음
+//            실제로 권한을 묻는 행위는 코딩하지 않았음
+            val pl = object : PermissionListener {
+                override fun onPermissionGranted() {
+
+//                    권한이 OK 되었을 때 해줄 일을 적는 공간
+                    val myUri = Uri.parse("tel:010-1111-1111")
+                    val myIntent = Intent(Intent.ACTION_CALL, myUri)
+                    startActivity(myIntent)
+                }
+
+                override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+
+//                    권한이 거절났다
+                    Toast.makeText(this@MainActivity, "권한이 거부되어 통화 불!가!능!", Toast.LENGTH_SHORT).show()
+                }
+
+
+            }
+
+
 
         }
 
