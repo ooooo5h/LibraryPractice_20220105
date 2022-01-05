@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 //        Glide 이용해서 웹의 이미지를 -> imgRecent에 반영하기
-        Glide.with(this).load("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.joongang.co.kr%2Farticle%2F25008728&psig=AOvVaw0uzGDRNdyrb117bHS6JTk9&ust=1641433192226000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiRuqW9mfUCFQAAAAAdAAAAABAJ").into(imgRecent)
+        Glide.with(this).load("https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202109/22/a01ab982-bb49-470c-a054-9412609f190a.jpg").into(imgRecent)
 
     }
 }
